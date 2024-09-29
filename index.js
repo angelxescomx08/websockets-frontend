@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const socket = new WebSocket('ws://localhost:3000');
 
   socket.onopen = (event) => {
-    console.log(event);
+    // console.log(event);
     console.log('Connected to server');
   }
 
   socket.onclose = (event) => {
-    console.log(event);
+    // console.log(event);
     console.log('Disconnected from server');
   }
 
@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   socket.onmessage = (event) => {
-    console.log(event);
+    // console.log(event);
     const { payload } = JSON.parse(event.data);
-    console.log(payload);
+    // console.log(payload);
     renderMessage(payload, messages);
   }
 });
